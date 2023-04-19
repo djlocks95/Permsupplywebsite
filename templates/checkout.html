@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 style="text-align: center;">Checkout</h2>
+    <p style="text-align: center;">.</p>
+
+    <div id="paypal-button-container" style="text-align: center;"></div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=AeNyD_amVsigeGViHUqrEXghoGJFFb8gGWYm-T4CjMVVSxaw7mIqLai3bw4Uyf4_VrYLrGfVMJlezl_M"></script>
+    <script>
+        paypal.Buttons({
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '10.00' // Replace this with the total cart amount
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name);
+                    // You can redirect the user to a confirmation page here
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
+{% endblock %}

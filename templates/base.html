@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permanent Supply</title>
+    <style>
+        /* Update styles for the video */
+                .header-video {
+          position: relative;
+          overflow: hidden;
+          height: 800px; /* Adjust the height as needed */
+          background-color: black;
+          color: white;
+          text-align: center;
+          padding: 1rem;
+          border-radius: 0 0 20px 20px;
+        }
+
+        .header-video video {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          min-width: 100%;
+          min-height: 100%;
+          object-fit: cover;
+          z-index: -1;
+        }
+
+
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Update existing styles */
+
+
+
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            line-height: 1.6;
+        }
+        header {
+            position: relative;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 0 0 20px 20px;
+        }
+        header video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: white;
+            border-radius: 20px;
+            margin: 1rem 0;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Creepster', cursive; /* Add the custom font here */
+            font-size: 24px; /* Add this line to set the font size */
+}
+        nav a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: gray;
+        }
+        .product {
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 1rem;
+            margin: 1rem auto;
+            width: 33%;
+            box-sizing: border-box;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        .product h3, .product p, .product button {
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+        .product button {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .product button:hover {
+            background-color: gray;
+        }
+    </style>
+</head>
+</style>
+
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='videos/ezgif.com-video-to-gif.gif') }}" style="width: 500px; display: block; margin: 0 auto;">
+        <h1></h1>
+    </header>
+
+
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('cart') }}">Cart</a>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <img src="{{ url_for('static', filename='images/IMG_3916.PNG') }}" alt="Copyright Logo" style="width: 50px; display: block; margin: 1rem auto;">
+        <p style="text-align: center;">&copy; {{ current_year }} PERMANENT SUPPLY. All rights reserved.</p>
+    </footer>
+</body>
+</html>

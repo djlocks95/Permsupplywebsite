@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="products">
+        <div class="product">
+            <img src="{{ url_for('static', filename='images/IMG_2025.jpg') }}" alt="Dog Sweat Suit">
+            <h3 style="font-family: 'Castellar', sans-serif; font-weight: bold; border-radius: 20px;">Dog Sweat Suit</h3>
+            <p>$200</p>
+            <button onclick="window.location.href='{{ url_for('add_to_cart') }}'">Add to Cart</button>
+        </div>
+    </section>
+{% endblock %}
+
